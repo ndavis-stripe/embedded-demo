@@ -1,0 +1,26 @@
+.menutab {
+  padding: 48px 24px;
+  cursor: pointer;
+  transition: .2s all;
+}
+
+.menutab:hover,
+.selectedtab {
+  background-color: var(--color-light-gray);
+}
+
+.selectedtab .tabtitle {
+  color: var(--color-blue);
+}
+
+.tabtitle {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 4px;
+  color: var(--color-text-light);
+}
+
+.tabsubtitle {
+  font-size: 16px;
+  color: var(--color-text-light);
+}

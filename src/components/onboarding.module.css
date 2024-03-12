@@ -1,0 +1,5 @@
+.onboardingWrapper {
+  width: 100%;
+  border: 3px dashed var(--color-focus-ring);
+  border-radius: 12px;
+}

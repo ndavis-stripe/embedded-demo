@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --color-blue: #0035ef;
+  --color-blue-hover: #2f5af6;
+  --color-gray: #f3f4f8;
+  --color-light-gray: #f9fafa;
+  --color-black: black;
+  --color-dark-blue: #333fa8;
+  --color-input-border: #aaa;
+  --color-text: #242424;
+  --color-text-light: #777;
+  --color-focus-ring: #bdc8fa;
+  --color-focus-ring-semi: #bdc8faaa;
+
+  --font: "Quicksand", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  font-family: var(--font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  background-color: var(--color-light-gray);
+  min-height: 100vh;
+  color: var(--color-text);
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid var(--color-input-border);
+  box-shadow: 0;
+  transition: 0.2s all;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-family: var(--font);
+}
+
+input:focus {
+  border: 1px solid var(--color-blue);
+  box-shadow: 0 0 0px 3px var(--color-focus-ring);
+  outline: 0;
+}
+
+button {
+  border-radius: 1000px;
+  color: white;
+  background-color: var(--color-blue);
+  padding: 12px 18px;
+  border: 1px solid var(--color-blue);
+  cursor: pointer;
+  transition: 0.2s all;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font);
+  display: flex;
+  gap: 12px;
+}
+
+button:hover {
+  background-color: var(--color-blue-hover);
+}
+
+button:disabled {
+  opacity: 0.4;
+  background-color: var(--color-blue-hover);
+  cursor: default;
+}
+
+button:disabled:active,
+button:disabled:focus {
+  box-shadow: none;
+}
+
+
+button:focus,
+button:active {
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+  outline: none;
+}
+
+pre, code {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 500;
+}

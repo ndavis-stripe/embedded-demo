@@ -1,0 +1,46 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px;
+  align-items: center;
+  min-width: 500px;
+  overflow: auto;
+  width: 100%;
+  margin-left: 300px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.code {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.cookieInfo {
+  position: fixed;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--color-focus-ring-semi);
+}
+
+.clearCookie {
+  font-weight: 800;
+  text-decoration: underline;
+  color: var(--color-blue);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 10px;
+}
