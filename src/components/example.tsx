@@ -106,6 +106,7 @@ const Example: FC<{
       {embeddedComponentsClientSecret && accountId && (
         <OnboardAccountComponent
           connectedAccountId={accountId}
+          clientSecret={embeddedComponentsClientSecret}
           advance={() => {}}
         />
       )}

@@ -9,9 +9,13 @@ import {
 
 const OnboardAccountComponent: FC<{
   connectedAccountId: string;
+  clientSecret: string;
   advance: () => void;
-}> = ({ connectedAccountId, advance }) => {
-  const stripeConnectInstance = useStripeConnect(connectedAccountId);
+}> = ({ connectedAccountId, clientSecret, advance }) => {
+  const stripeConnectInstance = useStripeConnect(
+    connectedAccountId,
+    clientSecret
+  );
 
   return (
     <div className={styles.onboardingWrapper}>

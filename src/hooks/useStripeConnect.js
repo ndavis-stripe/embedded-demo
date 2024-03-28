@@ -1,30 +1,13 @@
 import { useState, useEffect } from "react";
 import { loadConnectAndInitialize } from "@stripe/connect-js/pure";
 
-const useStripeConnect = (connectedAccountId) => {
+const useStripeConnect = (connectedAccountId, clientSecret) => {
   const [stripeConnectInstance, setStripeConnectInstance] = useState();
 
   useEffect(() => {
-    if (connectedAccountId) {
-      const fetchClientSecret = async () => {
-        const response = await fetch("/api/account-session", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            accountId: connectedAccountId,
-          }),
-        });
-
-        if (!response.ok) {
-          // Handle errors on the client side here
-          const { error } = await response.json();
-          throw `An error occurred: ${error}`;
-        } else {
-          const { client_secret: clientSecret } = await response.json();
-          return clientSecret;
-        }
+    if ((connectedAccountId, clientSecret)) {
+      const fetchClientSecret = () => {
+        return clientSecret;
       };
 
       setStripeConnectInstance(
@@ -61,7 +44,7 @@ const useStripeConnect = (connectedAccountId) => {
         })
       );
     }
-  }, [connectedAccountId]);
+  }, [connectedAccountId, clientSecret]);
 
   return stripeConnectInstance;
 };
