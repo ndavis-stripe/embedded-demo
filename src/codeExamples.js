@@ -156,4 +156,10 @@ const update = await stripe.accounts.update(account.id, {
 export const minExample = `// See information you can prefill at https://docs.stripe.com/api/accounts/create.
 const account = await stripe.accounts.create({
   // Minimum set of properties based on your use case and account configuration.
+  type: "custom",
+    country: "US",
+    capabilities: {
+      card_payments: { requested: true },
+      transfers: { requested: true },
+    },
 });`;
