@@ -157,9 +157,9 @@ export const minExample = `// See information you can prefill at https://docs.st
 const account = await stripe.accounts.create({
   // Minimum set of properties based on your use case and account configuration.
   type: "custom",
-    country: "US",
-    capabilities: {
-      card_payments: { requested: true },
-      transfers: { requested: true },
-    },
+  country: "US",
+  capabilities: {
+    card_payments: { requested: true },
+    transfers: { requested: true },
+  },
 });`;
