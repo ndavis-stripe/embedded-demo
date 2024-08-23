@@ -1,19 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Raleway:wght@300..700&display=swap");
 
 :root {
-  --color-blue: #0035ef;
-  --color-blue-hover: #2f5af6;
-  --color-gray: #f3f4f8;
-  --color-light-gray: #f9fafa;
+  --color-blue: #E0433E;
+  --color-blue-hover: #0C3C60;
+  --color-gray: #f5f5f5;
+  --color-light-gray: #fafafa;
   --color-black: black;
-  --color-dark-blue: #333fa8;
+  --color-dark-blue: #323243;
   --color-input-border: #aaa;
   --color-text: #242424;
-  --color-text-light: #777;
-  --color-focus-ring: #bdc8fa;
-  --color-focus-ring-semi: #bdc8faaa;
+  --color-text-light: #333;
+  --color-focus-ring: #ececec;
+  --color-focus-ring-semi: #ececec99;
 
-  --font: "Quicksand", sans-serif;
+  --font: "Raleway", sans-serif;
 }
 
 body,
@@ -46,7 +46,7 @@ input:focus {
 }
 
 button {
-  border-radius: 1000px;
+  border-radius: 4px;
   color: white;
   background-color: var(--color-blue);
   padding: 12px 18px;
@@ -54,19 +54,23 @@ button {
   cursor: pointer;
   transition: 0.2s all;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   font-family: var(--font);
   display: flex;
   gap: 12px;
+  transition: .2s all;
 }
 
 button:hover {
   background-color: var(--color-blue-hover);
+  border: 1px solid var(--color-blue-hover);
 }
 
-button:disabled {
+button:disabled,
+button:hover:disabled {
+  background-color: var(--color-blue);
+  border: 1px solid var(--color-blue);
   opacity: 0.4;
-  background-color: var(--color-blue-hover);
   cursor: default;
 }
 

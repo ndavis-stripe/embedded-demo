@@ -2,7 +2,11 @@ import { post } from "@/utils";
 import { FC, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { monoBlue } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {
+  github,
+  grayscale,
+  monoBlue,
+} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import styles from "./example.module.css";
 import Loader from "./loader";
 import OnboardAccountComponent from "./onboarding";
@@ -58,13 +62,13 @@ const Example: FC<{
         wrapLines={true}
         showLineNumbers={true}
         language="javascript"
-        style={monoBlue}
+        style={grayscale}
         customStyle={{
           lineHeight: "28px",
           fontSize: "13px",
           borderRadius: "8px",
           padding: "24px",
-          backgroundColor: "#f3f4f8",
+          backgroundColor: "#f7f7f7",
           overflowX: "visible",
           width: "700px",
           maxWidth: "700px",
@@ -82,9 +86,7 @@ const Example: FC<{
                 let response;
                 if (!accountId) {
                   response = await post("/api/create-account", {
-                    type: cookieName.startsWith("company")
-                      ? "COMPANY"
-                      : "INDIVIDUAL",
+                    type: cookieName,
                   });
                   setAccountId(response.accountId);
                   setCookie(cookieName, response.accountId);
@@ -95,7 +97,7 @@ const Example: FC<{
                 setLoading(false);
               }}
             >
-              CREATE AND ONBOARD ACCOUNT
+              Create and onboard account
             </button>
           </div>
           <div className={styles.col}>

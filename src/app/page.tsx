@@ -1,6 +1,11 @@
 "use client";
 
-import { companyExample, individualExample } from "@/codeExamples";
+import {
+  companyExample,
+  individualExample,
+  maxExample,
+  minExample,
+} from "@/codeExamples";
 import Example from "@/components/example";
 import MenuTab from "@/components/menutab";
 import { Suspense, useState } from "react";
@@ -19,8 +24,8 @@ export default function Home() {
         <div className={styles.menu}>
           <MenuTab
             selected={tab === 1}
-            title="Company example"
-            description="Prefill account information when a company tax ID is known."
+            title="Empty state example"
+            description="If no information is pre-filled, the full set of requirements will be collected during onboarding."
             onClick={() => {
               setTab(1);
               router.push("/?tab=1");
@@ -28,23 +33,52 @@ export default function Home() {
           />
           <MenuTab
             selected={tab === 2}
-            title="Individual example"
-            description="Prefill account information when an individual identifier is known."
+            title="Company example"
+            description="Pre-fill account information when a company tax ID is known."
             onClick={() => {
               setTab(2);
               router.push("/?tab=2");
             }}
           />
+          <MenuTab
+            selected={tab === 3}
+            title="Individual example"
+            description="Pre-fill account information when an individual identifier is known."
+            onClick={() => {
+              setTab(3);
+              router.push("/?tab=3");
+            }}
+          />
+          <MenuTab
+            selected={tab === 4}
+            title="Maximum prefill example"
+            description="Pre-fill all necessary information for an account. The user will only need to review and submit to acknowledge TOS."
+            onClick={() => {
+              setTab(4);
+              router.push("/?tab=4");
+            }}
+          />
         </div>
+
+        <Example
+          cookieName={"minAccountId"}
+          visible={tab === 1}
+          exampleCode={minExample}
+        />
         <Example
           cookieName={"companyAccountId"}
-          visible={tab === 1}
+          visible={tab === 2}
           exampleCode={companyExample}
         />
         <Example
           cookieName={"individualAccountId"}
-          visible={tab === 2}
+          visible={tab === 3}
           exampleCode={individualExample}
+        />
+        <Example
+          cookieName={"maxAccountId"}
+          visible={tab === 4}
+          exampleCode={maxExample}
         />
       </main>
     );
