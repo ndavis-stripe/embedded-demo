@@ -11,7 +11,8 @@ const OnboardAccountComponent: FC<{
   connectedAccountId: string;
   clientSecret: string;
   advance: () => void;
-}> = ({ connectedAccountId, clientSecret, advance }) => {
+  onStepChange: (stepChange: any) => void;
+}> = ({ connectedAccountId, clientSecret, advance, onStepChange }) => {
   const stripeConnectInstance = useStripeConnect(
     connectedAccountId,
     clientSecret
@@ -21,7 +22,10 @@ const OnboardAccountComponent: FC<{
     <div className={styles.onboardingWrapper}>
       {stripeConnectInstance && (
         <ConnectComponentsProvider connectInstance={stripeConnectInstance}>
-          <ConnectAccountOnboarding onExit={advance} />
+          <ConnectAccountOnboarding
+            onExit={advance}
+            onStepChange={onStepChange}
+          />
         </ConnectComponentsProvider>
       )}
     </div>

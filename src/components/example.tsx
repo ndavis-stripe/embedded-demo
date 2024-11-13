@@ -21,6 +21,7 @@ const Example: FC<{
   const [embeddedComponentsClientSecret, setEmbeddedComponentsClientSecret] =
     useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [stepChange, setStepChange] = useState(null as any | null);
 
   const fetchEmbeddedComponentClientSecret = async (accountId: string) => {
     setLoading(true);
@@ -51,6 +52,7 @@ const Example: FC<{
           onClick={() => {
             removeCookie(cookieName);
             setAccountId(null);
+            setStepChange(null);
             setEmbeddedComponentsClientSecret(null);
           }}
         >
@@ -107,10 +109,26 @@ const Example: FC<{
       </div>
       {embeddedComponentsClientSecret && accountId && (
         <OnboardAccountComponent
+          onStepChange={(stepChange) => {
+            console.info("[demo] Step change", stepChange.step);
+            setStepChange(stepChange);
+          }}
           connectedAccountId={accountId}
           clientSecret={embeddedComponentsClientSecret}
-          advance={() => {}}
+          advance={() => {
+            console.info("[demo] User exited onboarding.");
+          }}
         />
+      )}
+      {stepChange && (
+        <div className={styles.stepChange}>
+          <div>
+            <div>
+              Step change:{" "}
+              <span className={styles.step}>{stepChange.step}</span>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

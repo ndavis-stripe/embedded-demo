@@ -16,12 +16,12 @@ const useStripeConnect = (connectedAccountId, clientSecret) => {
           fetchClientSecret,
           appearance: {
             variables: {
-              fontFamily: "Raleway, sans-serif",
-              colorPrimary: "#E0433E",
+              fontFamily: "'Helvetica Neue', sans-serif",
+              colorPrimary: "#4ADBAE",
               colorText: "#242424",
               colorDanger: "#E0433E",
-              buttonSecondaryColorText: "#0C3C60",
-              buttonSecondaryColorBorder: "#0C3C60",
+              buttonSecondaryColorText: "#1B2B3F",
+              buttonSecondaryColorBorder: "#1B2B3F",
               buttonSecondaryColorBackground: "#eee",
               colorSecondaryText: "#666666",
               formHighlightColorBorder: "#E0433E ",

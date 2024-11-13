@@ -1,3 +1,15 @@
+export const stepChangeExample = `// Add an onStepChange callback to the embedded onboarding component.
+<ConnectComponentsProvider connectInstance={stripeConnectInstance}>
+  <ConnectAccountOnboarding
+    onExit={() => {
+      console.log("User exited onboarding.");
+    }}
+    onStepChange={(stepChange: {step: string}) => {
+      console.log(stepChange.step);
+    }}
+  />
+</ConnectComponentsProvider>`;
+
 export const companyExample = `// See information you can prefill at https://docs.stripe.com/api/accounts/create.
 const account = await stripe.accounts.create({
   type: "custom",

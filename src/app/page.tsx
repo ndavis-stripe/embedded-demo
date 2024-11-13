@@ -5,6 +5,7 @@ import {
   individualExample,
   maxExample,
   minExample,
+  stepChangeExample,
 } from "@/codeExamples";
 import Example from "@/components/example";
 import MenuTab from "@/components/menutab";
@@ -58,6 +59,15 @@ export default function Home() {
               router.push("/?tab=4");
             }}
           />
+          <MenuTab
+            selected={tab === 5}
+            title="onStepChange example"
+            description="Get called back when the connected account has navigated from one step to another within the onboarding process."
+            onClick={() => {
+              setTab(5);
+              router.push("/?tab=5");
+            }}
+          />
         </div>
 
         <Example
@@ -79,6 +89,11 @@ export default function Home() {
           cookieName={"maxAccountId"}
           visible={tab === 4}
           exampleCode={maxExample}
+        />
+        <Example
+          cookieName={"minAccountId"}
+          visible={tab === 5}
+          exampleCode={stepChangeExample}
         />
       </main>
     );

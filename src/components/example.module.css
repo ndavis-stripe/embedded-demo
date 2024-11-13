@@ -22,6 +22,11 @@
   line-height: 28px;
 }
 
+.step {
+  font-family: var(--codeFont);
+  font-weight: 700;
+}
+
 .cookieInfo {
   position: fixed;
   margin: 12px;
@@ -43,4 +48,15 @@
   cursor: pointer;
   text-transform: none;
   font-size: 10px;
+}
+
+.stepChange {
+  border-radius: 4px;
+  background-color: #BEF1FC;
+  color: var(--color-dark-blue);
+  padding: 24px;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  box-shadow: 0 2px 4px 2px #00000011;
 }
